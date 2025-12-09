@@ -1,0 +1,25 @@
+const express = require("express");
+const env = require('dotenv');
+const mongoose = require("mongoose");
+
+const app = express();
+env.config(); 
+
+app.get("/home", (req, res) => {
+  return res.json({ success: true });
+});
+
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
+
+app.listen(process.env.PORT, async () => {
+  console.log(`server started on port ${process.env.PORT}`);
+
+  try {
+    await mongoose.connect(process.env.DB_URL);
+    console.log("connected to mongo");
+  } catch (err) {
+    console.error("MongoDB connection error:", err);
+  }
+});

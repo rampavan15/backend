@@ -1,0 +1,16 @@
+{
+  "name": "booking",
+  "version": "1.0.0",
+  "description": "movie booking backend api applications similar to BMS(book my show)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ram phanindra pavan",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.0.1"
+  }
+}
