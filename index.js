@@ -2,8 +2,14 @@ const express = require("express");
 const env = require('dotenv');
 const mongoose = require("mongoose");
 
+const MovieRoutes = require('./routes/movie.routes');
+
 const app = express();
 env.config(); 
+
+app.use(express.json());  
+
+app.use("/", MovieRoutes);
 
 app.get("/home", (req, res) => {
   return res.json({ success: true });
